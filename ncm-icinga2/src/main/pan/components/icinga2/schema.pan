@@ -171,7 +171,7 @@ type structure_icinga2_contactgroup = {
 
 
 # General options
-type structure_icinga2_icinga_cfg = {
+type structure_icinga2_icinga2_cfg = {
     "log_file" : string = "/var/log/icinga2/icinga.log"
     "object_cache_file" : string = "/var/icinga2/objects.cache"
     "resource_file" : string = "/etc/icinga2/resource.cfg"
@@ -359,7 +359,7 @@ type structure_icinga2_ido2db_cfg = {
 } = dict();
 
 # Everything that can be handled by this component
-type structure_component_icinga = {
+type structure_component_icinga2 = {
     include structure_component
     "ignore_hosts" ? string[]
     "hosts" : structure_icinga2_host {}
@@ -384,5 +384,5 @@ type structure_component_icinga = {
     # versions.
 };
 
-bind "/software/components/icinga" = structure_component_icinga;
+bind "/software/components/icinga2" = structure_component_icinga2;
 
