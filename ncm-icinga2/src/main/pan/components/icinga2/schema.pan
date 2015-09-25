@@ -170,64 +170,6 @@ type structure_icinga2_contactgroup = {
 } = dict(); # has_users_or_assign => not really needed since hardcoded inside a user
 
 
-# CGI configuration
-type structure_icinga2_cgi_cfg = {
-    "main_config_file" : string = "/etc/icinga2/icinga.cfg"
-    "physical_html_path" : string = "/usr/share/icinga"
-    "url_html_path" : string = "/icinga"
-    "url_stylesheets_path" : string = "/icinga2/stylesheets"
-    "http_charset" : string = "utf-8"
-    "show_context_help" : boolean = false
-    "highlight_table_rows" : boolean = false
-    "use_pending_states" : boolean = true
-    "use_logging" : boolean = false
-    "cgi_log_file" : string = "/var/log/icinga2/gui/icinga-cgi.log"
-    "cgi_log_rotation_method" : string = "d"
-    "cgi_log_archive_path" : string = "/var/log/icinga2/gui"
-    "enforce_comments_on_actions" : boolean = false
-    "first_day_of_week" : boolean = false
-    "use_authentication" : boolean = true
-    "use_ssl_authentication": boolean = false
-    "authorized_for_system_information" : string = "icingaadmin"
-    "authorized_for_configuration_information" : string = "icingaadmin"
-    "authorized_for_system_commands" : string = "icingaadmin"
-    "authorized_for_all_services" : string = "icingaadmin"
-    "authorized_for_all_hosts" : string = "icingaadmin"
-    "authorized_for_all_service_commands" : string = "icingaadmin"
-    "authorized_for_all_host_commands" : string = "icingaadmin"
-    "show_all_services_host_is_authorized_for": boolean = true
-    "show_partial_hostgroups" : boolean = false
-    "statusmap_background_image" ? string
-    "default_statusmap_layout" : long = 5
-    "default_statuswrl_layout" : long = 4
-    "statuswrl_include" ? string
-    "ping_syntax" : string = "/bin/ping -n -U -c 5 $HOSTADDRESS$"
-    "refresh_rate" : long = 90
-    "escape_html_tags" : boolean = true
-    "persistent_ack_comments" : boolean = false
-    "action_url_target" : string = "main"
-    "notes_url_target" : string = "main"
-    "lock_author_names" : boolean = true
-    "default_downtime_duration" : long = 7200
-    "status_show_long_plugin_output": boolean = false
-    "tac_show_only_hard_state": boolean = false
-    "suppress_maintenance_downtime" : boolean = false
-    "show_tac_header" : boolean = true
-    "show_tac_header_pending" : boolean = true
-    "tab_friendly_titles" : boolean = true
-    "default_expiring_acknowledgement_duration" ? long
-    "default_expiring_disabled_notifications_duration" ? long
-    "display_status_totals" ? boolean
-    "extinfo_show_child_hosts" ? long
-    "log_file" ? string
-    "log_rotation_method" ? string
-    "lowercase_user_name" ? boolean
-    "result_limit" ? long
-    "send_ack_notifications" ? boolean
-    "set_expire_ack_by_default" ? boolean
-    "standalone_installation" ? boolean
-} = dict();
-
 # General options
 type structure_icinga2_icinga_cfg = {
     "log_file" : string = "/var/log/icinga2/icinga.log"
