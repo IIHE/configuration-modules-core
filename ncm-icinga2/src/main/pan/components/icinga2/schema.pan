@@ -169,6 +169,10 @@ type structure_icinga2_contactgroup = {
     "ignore_where" : string[]
 } = dict(); # has_users_or_assign => not really needed since hardcoded inside a user
 
+type structure_icinga2_init_conf = {
+    "icinga2_user" : string = "icinga"
+    "icinga2_group" : string = "icinga"
+}
 
 # General options
 type structure_icinga2_icinga2_cfg = {
@@ -369,7 +373,7 @@ type structure_component_icinga2 = {
     "services" : structure_icinga2_service_list {}
     "servicegroups" ? structure_icinga2_servicegroup {}
     "general" : structure_icinga2_icinga_cfg
-    "cgi" : structure_icinga2_cgi_cfg
+    "init" : structure_icinga2_init_cfg
     "serviceextinfo" ? structure_icinga2_serviceextinfo []
     "servicedependencies" ?  structure_icinga2_servicedependency []
     "timeperiods" : structure_icinga2_timeperiod {}
